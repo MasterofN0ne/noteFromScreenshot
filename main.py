@@ -36,13 +36,13 @@ def clear_img(filename):
 
 def extractNotes():
     dir = 'assets/week5'
-    file = open("histnotes_week_5.txt", "w")
+    file = open("histnotes_week_6_7_8.txt", "w")
     counter = 1
-    for filename in os.listdir("week5"):
+    for filename in os.listdir("week6-7-8"):
         print(counter)
         if filename.endswith(".png"):
-            clear_img(f"week5/{filename}")
-            text = pytesseract.image_to_string(Image.open(f"week5/{filename}"), lang='tur')
+            clear_img(f"week6-7-8/{filename}")
+            text = pytesseract.image_to_string(Image.open(f"week6-7-8/{filename}"), lang='tur')
             file.write(f"Extracted from {filename} file..\n")
             file.write(text)
             file.write("-----------------------------------------------------------------\n")
